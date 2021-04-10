@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+// import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter,Switch, Route} from "react-router-dom";
+import Aboutme from "./Pages/aboutme";
+import Contact from "./Pages/contact";
+import Collab from "./Pages/collab";
+import Projects from "./Pages/projects";
+
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> ALEXIS ARAN
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	return (
+		<div className="App">
+				
+				<HashRouter><Switch>
+						<Route path="/contact" component={Contact} />
+						<Route path="/projects" component={Projects} />
+						<Route path="/collab" component={Collab} />
+						<Route path="/" component={Aboutme} />	
+					</Switch>	
+				</HashRouter>
+		
+		</div>
+	);
 }
 
 export default App;
